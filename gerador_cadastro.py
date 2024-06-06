@@ -19,7 +19,7 @@ data = [(
     fake_cidade,
     fake_cpf.street_name(),
     fake_cpf.building_number())
-    for idx in range(50)]
+    for idx in range(50)] # Se quiser gerar mais que 50, troca esse 50 xD
 
 
 df = pd.DataFrame(data, columns=[
