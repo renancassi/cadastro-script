@@ -73,7 +73,7 @@ def clean_name(name):
 
 print(ascii_art)
 #Remover arquivo clientes.xlsx caso existente
-caminho_arquivo = 'clientes.xlsx'
+caminho_arquivo = 'clientes.csv'
 print("------------------------------")
 print("Procurando arquivo existente")
 if os.path.exists(caminho_arquivo):
@@ -295,7 +295,7 @@ def preencher_endereco(row):
         row['ponto_end_cep'] = cidade_ceps[cidade]
         row['ponto_end_rua'] = fake_cpf.street_name()
         row['ponto_end_numero'] = fake_cpf.building_number()
-        row['ponto_end_bairro'] = random.choice(bairro)
+        row['ponto_end_bairro'] = random.choice(cidade_bairros[cidade])
         row['ponto_end_complemento'] = random.choice(complementos)
         row['ponto_end_latitude'], row['ponto_end_longitude'] = get_random_coordinates(row['ponto_end_cidade'])
     return row
@@ -365,7 +365,7 @@ colunas_ordenadas = [
 
 
 df = df[colunas_ordenadas]
-df.to_excel("clientes.xlsx", index=False)
+df.to_csv("clientes.csv", index=False)
 print("------------------------------")
-print("Arquivo gerado" + ' ./clientes.xlsx')
+print("Arquivo gerado" + ' ./clientes.csv')
 print("------------------------------")
