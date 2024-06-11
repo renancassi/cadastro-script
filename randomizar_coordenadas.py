@@ -11,23 +11,26 @@ def generate_random_point_in_polygon(polygon):
 # Definição dos limites das cidades
 city_polygons = {
     'Dois Vizinhos': Polygon([
-        (-53.1100, -25.87656), # Sul, Oeste
-        (-53.1100, -25.60778),  # Norte, Oeste
-        (-52.95223, -25.60778), # Norte, Leste
-        (-52.95223, -25.87656) # Sul, Leste
+        (-53.0928, -25.7761),  # Sul, Oeste
+        (-53.0928, -25.7226),  # Norte, Oeste
+        (-53.0329, -25.7226),  # Norte, Leste
+        (-53.0329, -25.7761)   # Sul, Leste
     ]),
-   'Francisco Beltrão': Polygon([
-    (-53.37808, -26.19685),  
-    (-53.37808, -25.93725),  
-    (-52.88452, -25.93725),  
-    (-52.88452, -26.19685)   
+  
+  'Francisco Beltrão': Polygon([
+    (-53.0763, -26.0930),  # Sul, Oeste
+    (-53.0763, -26.0284),  # Norte, Oeste
+    (-53.0324, -26.0284),  # Norte, Leste
+    (-53.0324, -26.0930)   # Sul, Leste
     ]),
-    'Pato Branco': Polygon([
-    (-52.81300, -26.30780),  
-    (-52.81300, -25.99588),
-    (-52.52989, -25.99588),  
-    (-52.52989, -26.30780)   
-    ]),
+
+  'Pato Branco': Polygon([
+    (-52.7174, -26.2696),  # Sul, Oeste
+    (-52.7174, -26.1906),  # Norte, Oeste
+    (-52.6492, -26.1906),  # Norte, Leste
+    (-52.6492, -26.2696)   # Sul, Leste
+    ])
+
 }
 
 def get_random_coordinates(city_name):

@@ -15,7 +15,7 @@
 from listas import *
 from randomizar_coordenadas import *
 from gerador_serial import gerador_serial
-
+from randomizar_datas import *
 
 from tqdm import tqdm
 from faker import Faker
@@ -47,6 +47,24 @@ planos = {
     "Dois Vizinhos":"plano_100mb",
     "Francisco Beltrão": "plano_150mb",
     "Pato Branco":"plano_300mb"
+}
+
+valores_plano = {
+    "plano_100mb": {
+        "adesao": '300',
+        "rescisao": '400',
+        "mensalidade": '150'
+    },
+    "plano_150mb": {
+        "adesao": '349.90',
+        "rescisao": '500',
+        "mensalidade": '200'
+    },
+    "plano_300mb": {
+        "adesao": '189.90',
+        "rescisao": '700',
+        "mensalidade": '299.90'
+    }
 }
 
 
@@ -88,7 +106,36 @@ with tqdm(total=total_registros, desc="Gerando dados", unit="registro") as pbar:
         vencimento = random.randint(5, 25)
         coordenadaY, coordenadaX = get_random_coordinates(cidade)
         nome_completo = clean_name(fake_geral.name())
-        
+        carteira = random.choice(contrato_carteira)
+        data_cadastro = randomizar_datas_cadastro()
+        data_adesao = randomizar_datas_adesao(data_cadastro)
+        data_ativacao = randomizar_datas_ativacao(data_adesao)
+
+        valor_adesao = valores_plano[plano]["adesao"]
+        valor_rescisao = valores_plano[plano]["rescisao"]
+        valor_mensalidade = valores_plano[plano]["mensalidade"]
+
+
+        if random.random() < 0.05:
+            data_rescisao = randomizar_datas_rescisao(data_adesao)
+            data_rescisao_formatado = data_rescisao.strftime('%d/%m/%Y')
+        else:
+            data_rescisao_formatado = ''
+
+        if random.random() < 0.10:
+            contrato_nfe2x_tipo_lancamento = random.choice(contratos_nfe2x_tipos)
+            contrato_faturavel = 'n'
+            contrato_tipo_faturamento = 'manual'
+            if data_rescisao_formatado == '':
+                contrato_fidelidade = random.randint(0,18)
+            else:
+                contrato_fidelidade = ''
+        else:
+            contrato_nfe2x_tipo_lancamento = 'auto'
+            contrato_faturavel = 's'
+            contrato_tipo_faturamento = 'auto'
+            contrato_fidelidade = ''
+
         if random.random() < 0.40:
             contrato_observacao = random.choice(contrato_observacoes)
         else:
@@ -119,9 +166,12 @@ with tqdm(total=total_registros, desc="Gerando dados", unit="registro") as pbar:
             tipo_pessoa = "PF"
             parceiro = 'n'
         
+
+
         # Valida se RG contém "X" no final, caso positivo, gera um novo RG
         while rg_ie[-1].upper() == 'X':
             rg_ie = fake_cpf.rg()
+            
         
         data.append((
             idx + 1,
@@ -137,10 +187,22 @@ with tqdm(total=total_registros, desc="Gerando dados", unit="registro") as pbar:
             bairro,
             complemento,
             fake_cpf.msisdn(),
+            data_cadastro.strftime('%d/%m/%Y'),
+            data_adesao.strftime('%d/%m/%Y'),
+            data_rescisao_formatado,
+            contrato_fidelidade,
+            valor_adesao,
+            valor_rescisao,
+            valor_mensalidade,
+            contrato_faturavel,
+            contrato_tipo_faturamento,
+            contrato_nfe2x_tipo_lancamento,
             parceiro,
+            carteira,
             contrato_observacao,
             plano,
             vencimento,
+            data_ativacao.strftime('%d/%m/%Y'),
             fake_cpf.mac_address(),
             coordenadaY,
             coordenadaX,
@@ -148,6 +210,7 @@ with tqdm(total=total_registros, desc="Gerando dados", unit="registro") as pbar:
             fake_serial
         ))
         pbar.update(1)
+
 
 df = pd.DataFrame(data, columns=[
     'cliente_codigo',
@@ -163,10 +226,22 @@ df = pd.DataFrame(data, columns=[
     'cliente_end_bairro',
     'cliente_end_complemento',
     'cliente_telefones',
+    'cliente_data_cadastro',
+    'cliente_data_adesao',
+    'cliente_data_recisao',
+    'contrato_fidelidade',
+    'contrato_valor_adesao',
+    'contrato_valor_rescisão',
+    'contrato_valor_mensal',
+    'contrato_faturavel',
+    'contrato_tipo_faturamento',
+    'contrato_nfe2x_tipo_lancamento',
     'cliente_parceiro',
+    'contrato_carteira',
     'contrato_observacoes',
     'ponto_plano',
-    'vencimento',
+    'contrato_dia_vencimento',
+    'ponto_data_ativacao',
     'ponto_mac',
     'cliente_end_latitude',
     'cliente_end_longitude',
@@ -175,11 +250,57 @@ df = pd.DataFrame(data, columns=[
 ])
 
 # Gera coluna "cliente_apelido" com base na primeira coluna (cliente_nome)
-
 df['cliente_apelido'] = df['cliente_nome'].apply(lambda name: name.split()[0])
+
 #Gera coluna "ponto_emails" com base na primeira coluna (cliente_nome)
 df['ponto_emails'] = df['cliente_nome'].apply(lambda name: f"{name.replace(' ', '.').lower()}@mailinator.com") 
+
 df['ponto_ppp_usuario'] = df['cliente_nome'].apply(lambda name: f"{name.replace(' ', '.').lower()}@meuprovedor.com.br")
+df['ponto_nome'] = df['cliente_end_complemento']
+
+probabilidade_contrato_endereco = 0.2
+probabilidade_ponto_endereco_igual = 0.7
+
+def preencher_endereco(row):
+    if random.random() < probabilidade_contrato_endereco:
+        row['contrato_end_cidade'] = row['cliente_end_cidade']
+        row['contrato_end_cep'] = row['cliente_end_cep']
+        row['contrato_end_rua'] = row['cliente_end_rua']
+        row['contrato_end_numero'] = row['cliente_end_numero']
+        row['contrato_end_bairro'] = row['cliente_end_bairro']
+        row['contrato_end_complemento'] = row['cliente_end_complemento']
+        row['contrato_end_latitude'] = row['cliente_end_latitude']
+        row['contrato_end_longitude'] = row['cliente_end_longitude']
+    else:
+        row['contrato_end_cidade'] = None
+        row['contrato_end_cep'] = None
+        row['contrato_end_rua'] = None
+        row['contrato_end_numero'] = None
+        row['contrato_end_bairro'] = None
+        row['contrato_end_complemento'] = None
+        row['contrato_end_latitude'] = None
+        row['contrato_end_longitude'] = None
+
+    if random.random() < probabilidade_ponto_endereco_igual:
+        row['ponto_end_cidade'] = row['cliente_end_cidade']
+        row['ponto_end_cep'] = row['cliente_end_cep']
+        row['ponto_end_rua'] = row['cliente_end_rua']
+        row['ponto_end_numero'] = row['cliente_end_numero']
+        row['ponto_end_bairro'] = row['cliente_end_bairro']
+        row['ponto_end_complemento'] = row['cliente_end_complemento']
+        row['ponto_end_latitude'] = row['cliente_end_latitude']
+        row['ponto_end_longitude'] = row['cliente_end_longitude']
+    else:
+        row['ponto_end_cidade'] = random.choice(cidades)
+        row['ponto_end_cep'] = cidade_ceps[cidade]
+        row['ponto_end_rua'] = fake_cpf.street_name()
+        row['ponto_end_numero'] = fake_cpf.building_number()
+        row['ponto_end_bairro'] = random.choice(bairro)
+        row['ponto_end_complemento'] = random.choice(complementos)
+        row['ponto_end_latitude'], row['ponto_end_longitude'] = get_random_coordinates(row['ponto_end_cidade'])
+    return row
+
+df = df.apply(preencher_endereco, axis=1)
 
 
 # Reordena as colunas
@@ -197,15 +318,44 @@ colunas_ordenadas = [
     'cliente_end_numero',
     'cliente_end_bairro',
     'cliente_end_complemento',
-    'cliente_telefones',
-    'ponto_emails',
-    'cliente_parceiro',
-    'contrato_observacoes',
-    'ponto_plano',
-    'vencimento',
     'cliente_end_latitude',
     'cliente_end_longitude',
+    'cliente_telefones',
+    'ponto_emails',
+    'cliente_data_cadastro',
+    'cliente_parceiro',
+    'contrato_carteira',
+    'cliente_data_adesao',
+    'cliente_data_recisao',
+    'contrato_fidelidade',
+    'contrato_valor_adesao',
+    'contrato_valor_rescisão',
+    'contrato_valor_mensal',
+    'contrato_dia_vencimento',
+    'contrato_observacoes',
+    'contrato_faturavel',
+    'contrato_tipo_faturamento',
+    'contrato_nfe2x_tipo_lancamento',
+    'contrato_end_cidade',
+    'contrato_end_cep',
+    'contrato_end_rua',
+    'contrato_end_numero',
+    'contrato_end_bairro',
+    'contrato_end_complemento',
+    'contrato_end_latitude',
+    'contrato_end_longitude',
+    'ponto_plano',
+    'ponto_nome',
     'ponto_ppp_usuario',
+    'ponto_end_cidade',
+    'ponto_end_cep',
+    'ponto_end_rua',
+    'ponto_end_numero',
+    'ponto_end_bairro',
+    'ponto_end_complemento',
+    'ponto_end_latitude',
+    'ponto_end_longitude',
+    'ponto_data_ativacao',
     'ponto_mac',
     'ponto_tecnologia',
     'ponto_serial'

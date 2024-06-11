@@ -151,11 +151,7 @@ cidades = [
 # Complementos
 complementos = [
     "Casa",
-    "Apartamento",
-    "APTO",
-    "Sobrado",
-    "Bloco",
-    "Fundos"
+    "APTO"
 ]
 
 contrato_observacoes = [
@@ -169,4 +165,16 @@ contrato_observacoes = [
     "Cliente espera um roteador moderno na instalação.",
     "Cliente quer segunda via do contrato via e-mail.",
     "Cliente sugere avaliar a qualidade de vez em quando."
+]
+
+contrato_carteira = [
+  "Boleto Próprio",
+  "EFÍ",
+  "GalaxPay",
+  "Santander"
+]
+
+contratos_nfe2x_tipos = [
+ 'manual',
+ 'outro'
 ]
