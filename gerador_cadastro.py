@@ -16,6 +16,9 @@ from listas import *
 from randomizar_coordenadas import *
 from gerador_serial import gerador_serial
 from randomizar_datas import *
+from calculo_cpf import *
+from calculo_cnpj import *
+from calculo_rg import *
 
 from tqdm import tqdm
 from faker import Faker
@@ -86,6 +89,14 @@ else:
     print("O arquivo não existe!")
     print("------------------------------")
     
+def gerar_telefone_valido_formatado(telefone_base_numero):
+    telefone_base = f"{telefone_base_numero:010d}"
+    return f"(46) {telefone_base[:5]}-{telefone_base[5:]}"
+
+cpf_inicial = 999999999-1
+cnpj_inicial = 999999990001-1
+rg_inicial = 99999999-1
+telefone_inicial = 9999999999
 
 while True:
     try:
@@ -95,7 +106,7 @@ while True:
         print("insira apenas números inteiros.")
 
 data = []
-
+nomes_gerados = []
 with tqdm(total=total_registros, desc="Gerando dados", unit="registro") as pbar:
     for idx in range(total_registros): 
         cidade = random.choice(cidades)
@@ -105,7 +116,14 @@ with tqdm(total=total_registros, desc="Gerando dados", unit="registro") as pbar:
         plano = planos[cidade]
         vencimento = random.randint(5, 25)
         coordenadaY, coordenadaX = get_random_coordinates(cidade)
-        nome_completo = clean_name(fake_geral.name())
+        #nome_completo = clean_name(fake_geral.name())
+
+        while True:
+            nome_completo = clean_name(fake_geral.name())
+            if nome_completo not in nomes_gerados:
+                nomes_gerados.append(nome_completo)
+                break
+
         carteira = random.choice(contrato_carteira)
         data_cadastro = randomizar_datas_cadastro()
         data_adesao = randomizar_datas_adesao(data_cadastro)
@@ -151,7 +169,8 @@ with tqdm(total=total_registros, desc="Gerando dados", unit="registro") as pbar:
         # Definindo se o registro terá IE no lugar de RG (5% de chance)
         if random.random() < 0.05:
             rg_ie = generators.state_registration(uf_code='PR')
-            cpf_cnpj = fake_cpf.cnpj()
+            cpf_cnpj = gerar_cnpj_valido_formatado(cpf_inicial)
+            cnpj_inicial -= 1
             complemento = "Loja"
             tipo_pessoa = "PJ"
             tipo_tecnologia = 'FTTH'
@@ -161,8 +180,10 @@ with tqdm(total=total_registros, desc="Gerando dados", unit="registro") as pbar:
             else:
                 parceiro = 'n'
         else:
-            rg_ie = fake_cpf.rg()
-            cpf_cnpj = fake_cpf.cpf()
+            rg_ie = gerar_rg_valido_formatado(rg_inicial)
+            rg_inicial -= 1
+            cpf_cnpj = gerar_cpf_valido_formatado(cpf_inicial)
+            cpf_inicial -= 1
             tipo_pessoa = "PF"
             parceiro = 'n'
         
@@ -170,8 +191,11 @@ with tqdm(total=total_registros, desc="Gerando dados", unit="registro") as pbar:
 
         # Valida se RG contém "X" no final, caso positivo, gera um novo RG
         while rg_ie[-1].upper() == 'X':
-            rg_ie = fake_cpf.rg()
-            
+            rg_ie = gerar_rg_valido_formatado(rg_inicial)
+            rg_inicial -= 1
+        
+        telefone = gerar_telefone_valido_formatado(telefone_inicial)
+        telefone_inicial -= 1
         
         data.append((
             idx + 1,
@@ -186,7 +210,7 @@ with tqdm(total=total_registros, desc="Gerando dados", unit="registro") as pbar:
             fake_cpf.building_number(),
             bairro,
             complemento,
-            fake_cpf.msisdn(),
+            telefone,
             data_cadastro.strftime('%d/%m/%Y'),
             data_adesao.strftime('%d/%m/%Y'),
             data_rescisao_formatado,
@@ -253,7 +277,7 @@ df = pd.DataFrame(data, columns=[
 df['cliente_apelido'] = df['cliente_nome'].apply(lambda name: name.split()[0])
 
 #Gera coluna "ponto_emails" com base na primeira coluna (cliente_nome)
-df['ponto_emails'] = df['cliente_nome'].apply(lambda name: f"{name.replace(' ', '.').lower()}@mailinator.com") 
+df['ponto_emails'] = df['cliente_nome'].apply(lambda name: f"{name.replace(' ', '.').lower()}@emailexemplo.com") 
 
 df['ponto_ppp_usuario'] = df['cliente_nome'].apply(lambda name: f"{name.replace(' ', '.').lower()}@meuprovedor.com.br")
 df['ponto_nome'] = df['cliente_end_complemento']
@@ -366,6 +390,10 @@ colunas_ordenadas = [
 
 df = df[colunas_ordenadas]
 df.to_csv("clientes.csv", index=False)
+
+diretorio_atual = os.getcwd()
+
+
 print("------------------------------")
-print("Arquivo gerado" + ' ./clientes.csv')
+print("Arquivo gerado: " + os.path.join(diretorio_atual, "clientes.csv"))
 print("------------------------------")
