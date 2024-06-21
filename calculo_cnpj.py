@@ -24,6 +24,4 @@ def gerar_cnpj_valido_formatado(numero_base):
     return cnpj_formatado
 
 
-cnpj_inicial = 999999990001  # Exemplo de CNPJ inicial, ajuste conforme necessário
-
-gerar_cnpj_valido_formatado(cnpj_inicial)
+cnpj_inicial = 999999990001  

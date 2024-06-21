@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2"
+  xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+  <Document>
+    <name>Dois Vizinhos</name>
+    <Folder>
+      <name>OLT</name>
+      <Placemark>
+        <name>olt</name>
+        <styleUrl>#stl-olt</styleUrl>
+        <description>OLT</description>
+        <Point>
+          <coordinates>-53.05372088406424,-25.74702775508007</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder><name>CTO</name><Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Da Luz</description>
+        <Point>
+          <coordinates>-53.05674983032025,-25.734461804972586</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Das Torres</description>
+        <Point>
+          <coordinates>-53.05142168114123,-25.741015500358817</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Sagrada Família</description>
+        <Point>
+          <coordinates>-53.0660772711986,-25.758255136837647</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Jardim da Colina</description>
+        <Point>
+          <coordinates>-53.07040195226136,-25.73021051552297</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Jardim Marcante</description>
+        <Point>
+          <coordinates>-53.071131513113414,-25.73736243965864</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>São Francisco de Assis</description>
+        <Point>
+          <coordinates>-53.06748370885316,-25.74391477076708</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Esperança</description>
+        <Point>
+          <coordinates>-53.07153920888368,-25.755124410824227</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Santa Luzia</description>
+        <Point>
+          <coordinates>-53.078083798880016,-25.75701834898086</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Centro Sul</description>
+        <Point>
+          <coordinates>-53.05741308103556,-25.755606604518643</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Centro</description>
+        <Point>
+          <coordinates>-53.05382222429283,-25.74715746439674</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Centro Norte</description>
+        <Point>
+          <coordinates>-53.056631814404355,-25.74220998640037</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>São Francisco Xavier</description>
+        <Point>
+          <coordinates>-53.05041996979124,-25.756396861200546</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Alto da Colina</description>
+        <Point>
+          <coordinates>-53.06174960524505,-25.746446006488043</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>São judas Tadeu</description>
+        <Point>
+          <coordinates>-53.050616552781825,-25.74844718781723</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Vitória</description>
+        <Point>
+          <coordinates>-53.07692981888188,-25.74669741590945</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Santo Antônio</description>
+        <Point>
+          <coordinates>-53.05630274683756,-25.76687760910119</coordinates>
+        </Point>
+      </Placemark></Folder>
+  </Document>
+</kml>

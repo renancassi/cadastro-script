@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2"
+  xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+  <Document>
+    <name>Francisco Beltrão</name>
+    <Folder>
+      <name>OLT</name>
+      <Placemark>
+        <name>olt</name>
+        <styleUrl>#stl-olt</styleUrl>
+        <description>OLT</description>
+        <Point>
+          <coordinates>-53.05147632839049,-26.07851253032672</coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+    <Folder><name>CTO</name><Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Água Branca</description>
+        <Point>
+          <coordinates>-53.05137731888971,-26.109159627906084</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>São Cristovão</description>
+        <Point>
+          <coordinates>-53.04874355225609,-26.096797247086517</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Cango</description>
+        <Point>
+          <coordinates>-53.05190158022866,-26.067488090416436</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Centro</description>
+        <Point>
+          <coordinates>-53.05119227991721,-26.0786251606901</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Industrial</description>
+        <Point>
+          <coordinates>-53.04110225477892,-26.087207606025085</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Jardim Seminário</description>
+        <Point>
+          <coordinates>-53.026608619533434,-26.080288595937603</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Júpter</description>
+        <Point>
+          <coordinates>-53.052063779342475,-26.040812679354776</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Luther King</description>
+        <Point>
+          <coordinates>-53.04317815836385,-26.064463322596048</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Miniguaçu</description>
+        <Point>
+          <coordinates>-53.03290233292322,-26.06947208948738</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Novo Mundo</description>
+        <Point>
+          <coordinates>-53.07911718181394,-26.06394006447043</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Sadia</description>
+        <Point>
+          <coordinates>-53.05580209451654,-26.03358759206557</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro São Francisco</description>
+        <Point>
+          <coordinates>-53.073705281997235,-26.06700615796211</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Vila Nova</description>
+        <Point>
+          <coordinates>-53.03941374470456,-26.075425245766187</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Divisor</description>
+        <Point>
+          <coordinates>-53.082183062963914,-26.027864347915585</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Alvorada</description>
+        <Point>
+          <coordinates>-53.06492741152249,-26.079531228184845</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Cantelmo</description>
+        <Point>
+          <coordinates>-53.07653118422951,-26.045942651203802</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Cristo Rei</description>
+        <Point>
+          <coordinates>-53.066200177427014,-26.06997793948999</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Jardim Floresta e Italia</description>
+        <Point>
+          <coordinates>-53.047145980346166,-26.04949484508756</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Jardim Virgínia</description>
+        <Point>
+          <coordinates>-53.06354822863849,-26.050493812305852</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Kennedy</description>
+        <Point>
+          <coordinates>-53.04656535324013,-26.072340547983806</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Marrecas</description>
+        <Point>
+          <coordinates>-53.071912725701516,-26.07848536718272</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Nossa Senhora Aparecida</description>
+        <Point>
+          <coordinates>-53.05747722949147,-26.082793184379472</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Padre Ulrico</description>
+        <Point>
+          <coordinates>-53.035484462816,-26.048071139107403</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Pinheirinho</description>
+        <Point>
+          <coordinates>-53.063356375069176,-26.04187190836954</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro São Miguel</description>
+        <Point>
+          <coordinates>-53.08062014189689,-26.076168863635687</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Bairro Pinheirão</description>
+        <Point>
+          <coordinates>-53.06562710696643,-26.090639363663186</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Km 23</description>
+        <Point>
+          <coordinates>-53.05477299959538,-26.04796727190186</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Linha Eva e Linha Macagnan</description>
+        <Point>
+          <coordinates>-53.10389312627454,-26.05664166821708</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Linha Hobold</description>
+        <Point>
+          <coordinates>-53.03736421673418,-26.057125208311664</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Linha São Paula</description>
+        <Point>
+          <coordinates>-53.021482626382145,-26.07980739099338</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Linha Volpato</description>
+        <Point>
+          <coordinates>-53.02962349292455,-26.10438995866575</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Rio do Mato</description>
+        <Point>
+          <coordinates>-53.055604384762745,-26.117657746752208</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Rio Guarapuava</description>
+        <Point>
+          <coordinates>-53.069002451239214,-26.107350226473617</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Rio Tuna</description>
+        <Point>
+          <coordinates>-53.07886629560159,-26.08929136302135</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade São Francisco de Assis</description>
+        <Point>
+          <coordinates>-53.09340567292677,-26.040149525808435</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade São Pio X – Km 20</description>
+        <Point>
+          <coordinates>-53.117826770201916,-26.049011828609064</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Secção Progresso</description>
+        <Point>
+          <coordinates>-52.98660408839868,-26.055407043497752</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Vila Lobos</description>
+        <Point>
+          <coordinates>-52.97390301742339,-26.03409851429216</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Volta Grande</description>
+        <Point>
+          <coordinates>-53.05184198702856,-26.01172210533001</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Assentamento Missões</description>
+        <Point>
+          <coordinates>-53.07866454184121,-26.009940379449755</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Jacutinga</description>
+        <Point>
+          <coordinates>-53.04876301404331,-26.02050932032894</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Lageado Grande</description>
+        <Point>
+          <coordinates>-53.02950311284385,-26.03859816617206</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Linha Formiga</description>
+        <Point>
+          <coordinates>-53.08620710842746,-26.11717594834789</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Linha Santa Rosa – Km 08</description>
+        <Point>
+          <coordinates>-53.10512242913479,-26.075556527989153</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Linha Triton</description>
+        <Point>
+          <coordinates>-53.02408633128011,-26.026172363093014</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Nova Concórdia</description>
+        <Point>
+          <coordinates>-53.005525615367475,-26.097534849033472</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Rio Erval – Km 15</description>
+        <Point>
+          <coordinates>-53.029158805665936,-26.124984063986112</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Rio Pedreirinho</description>
+        <Point>
+          <coordinates>-53.011703956588924,-26.109648778947523</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Santa Bárbara</description>
+        <Point>
+          <coordinates>-53.10218115624742,-26.0961272659634</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade São João</description>
+        <Point>
+          <coordinates>-53.10893968642367,-26.088123703881728</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Secção Jacaré</description>
+        <Point>
+          <coordinates>-53.09888785576574,-26.065893453838196</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Secção São Miguel</description>
+        <Point>
+          <coordinates>-53.10861520877922,-26.042595099123123</coordinates>
+        </Point>
+      </Placemark>
+      ,<Placemark>
+        <name>cto</name>
+        <styleUrl>#stl-cto</styleUrl>
+        <description>Comunidade Vila Rural Gralha Azul</description>
+        <Point>
+          <coordinates>-52.999907042763944,-26.081868232183787</coordinates>
+        </Point>
+      </Placemark></Folder>
+  </Document>
+</kml>
