@@ -37,24 +37,24 @@ def update_client_coordinates(client_data, cto_coords, radius_meters=500):
             updated_clients.append((client_lat, client_lon, client_neighborhood, client_city))
     return updated_clients
 
-# Carregar os dados do CSV dos clientes
+
 csv_file_clients = 'clientes/clientes_import.csv'
 client_data = pd.read_csv(csv_file_clients)
 
-# Carregar os dados do CSV dos CTOs
+
 csv_file_ctos = 'cidadesOlt/cto_cidades.csv'
 cto_coords = get_coordinates_from_csv(csv_file_ctos)
 
-# Atualizar as coordenadas dos clientes
+
 client_coordinates = client_data[['ponto_end_latitude', 'ponto_end_longitude', 'ponto_end_bairro', 'ponto_end_cidade']].values.tolist()
 updated_client_coords = update_client_coordinates(client_coordinates, cto_coords, radius_meters=500)
 
-# Atualizar o DataFrame original com as novas coordenadas
+
 for i, updated_coord in enumerate(updated_client_coords):
     client_data.at[i, 'ponto_end_latitude'] = updated_coord[1]
     client_data.at[i, 'ponto_end_longitude'] = updated_coord[0]
     client_data.at[i, 'ponto_end_bairro'] = updated_coord[2]
     client_data.at[i, 'ponto_end_cidade'] = updated_coord[3]
 
-# Salvar o DataFrame atualizado em um novo arquivo CSV
-client_data.to_csv('clientes/clientes_atualizados.csv', index=False)
+
+client_data.to_csv('clientes/clientes_coordenadas.csv', index=False)
