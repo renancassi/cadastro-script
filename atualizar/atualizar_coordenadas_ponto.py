@@ -38,7 +38,7 @@ def update_client_coordinates(client_data, cto_coords, radius_meters=500):
     return updated_clients
 
 
-csv_file_clients = 'clientes/clientes_import.csv'
+csv_file_clients = 'clientes/clientes_coordenadas_bairros_atualizados.csv'
 client_data = pd.read_csv(csv_file_clients)
 
 
@@ -57,4 +57,4 @@ for i, updated_coord in enumerate(updated_client_coords):
     client_data.at[i, 'ponto_end_cidade'] = updated_coord[3]
 
 
-client_data.to_csv('clientes/clientes_coordenadas.csv', index=False)
+client_data.to_csv('clientes/clientes_coordenadas_finalizado.csv', index=False)
