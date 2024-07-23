@@ -23,10 +23,10 @@ def get_coordinates_from_csv(file_path):
 
     return cto_coords
 
-def atualizarCoordenadasPonto(client_data, cto_coords, radius_meters=500):
+def update_client_coordinates(client_data, cto_coords, radius_meters=20):
     updated_clients = []
     for client in client_data:
-        client_lat, client_lon, client_neighborhood, client_city = client
+        client_lat, client_lon, client_city = client
         updated = False
         for cto in cto_coords:
             if cto[2] == client_neighborhood and cto[3] == client_city:
