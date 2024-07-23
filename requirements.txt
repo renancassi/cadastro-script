@@ -1,0 +1,8 @@
+faker
+pandas
+openpyxl 
+shapely
+geopandas  
+tqdm
+fordev
+geopy
