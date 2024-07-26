@@ -10,7 +10,7 @@ def generate_random_point_around(center_point, radius_meters):
     return distance(meters=distance_meters).destination((center_point.y, center_point.x), angle)
 
 # Função para atualizar as coordenadas dos clientes
-def update_client_coordinates(client_data, cto_coords, radius_meters=150):
+def update_client_coordinates(client_data, cto_coords, radius_meters=300):
     updated_clients = []
     for client in client_data:
         client_lat, client_lon, client_neighborhood, client_city = client

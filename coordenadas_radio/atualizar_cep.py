@@ -7,7 +7,7 @@ cidade_ceps = {
     "Pato Branco": "85501000"
 }
 
-clientes_df = pd.read_csv('C:/Users/Marketing/Documents/vscode/script/cadastro-script/coordenadas_radio/cidade_teste.csv')
+clientes_df = pd.read_csv('C:/Users/Marketing/Documents/vscode/script/cadastro-script/coordenadas_radio/mac_bairro_atualizado.csv')
 
 def atribuir_cep(cidade):
     return cidade_ceps.get(cidade, "")

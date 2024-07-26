@@ -1,7 +1,9 @@
 from faker import Faker
+import os
 serialFake = Faker()
 
 
+os.system('cls')
 
 for i in range(20):
     print(f'{i} Ip: ' + serialFake.ipv4_private())
