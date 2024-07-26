@@ -35,7 +35,7 @@ for idx, row in clientes_df.iterrows():
 
 
 clientes_grouped = clientes_df.groupby('bairro')
-torres_grouped = torres_df.groupby('bairro')
+# (Falta cadastrar FTTB beltrão/pato) torres_grouped = torres_df.groupby('bairro')
 
 
 def atribuir_mac(cliente_row):
